@@ -25,13 +25,13 @@
         h2 {
             color: #333;
         }
-        /* Label umum */
+        
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
         }
-        /* Style untuk input teks, textarea, select */
+
         input[type="text"], textarea, select {
             width: 98%;
             padding: 8px;
@@ -39,20 +39,18 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        /* Style khusus untuk radio dan checkbox agar sebaris dengan teks */
+
         input[type="radio"], input[type="checkbox"] {
             margin-right: 5px;
-            vertical-align: middle; /* Memastikan perataan vertikal yang baik */
+            vertical-align: middle; 
         }
         
-        /* Label yang mengikuti radio/checkbox (dibuat inline) */
         .inline-item {
-            display: inline-block; /* Membuat setiap pilihan sebaris */
-            margin-right: 15px; /* Jarak antar pilihan */
-            font-weight: normal; /* Menghilangkan bold dari label ini */
+            display: inline-block; 
+            margin-right: 15px;
+            font-weight: normal;
         }
 
-        /* Div atau label utama untuk Jenis Kelamin/Hobi tetap block */
         .group-label {
             display: block;
             margin-bottom: 8px;
@@ -135,7 +133,6 @@
     </form>
 
     <?php
-    // Memproses data dari form biodata (metode POST)
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nama = $_POST['nama'];
         $nim = $_POST['nim'];
@@ -167,7 +164,6 @@
     </form>
 
     <?php
-    // Memproses data dari form pencarian (metode GET)
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['keyword'])) {
         $keyword = htmlspecialchars($_GET['keyword']);
         echo "<p>Anda mencari data dengan kata kunci: <strong>$keyword</strong></p>";
@@ -178,3 +174,4 @@
 
 </body>
 </html>
+
