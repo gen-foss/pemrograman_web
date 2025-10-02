@@ -25,11 +25,13 @@
         h2 {
             color: #333;
         }
+        /* Label umum */
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
         }
+        /* Style untuk input teks, textarea, select */
         input[type="text"], textarea, select {
             width: 98%;
             padding: 8px;
@@ -37,9 +39,26 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+        /* Style khusus untuk radio dan checkbox agar sebaris dengan teks */
         input[type="radio"], input[type="checkbox"] {
             margin-right: 5px;
+            vertical-align: middle; /* Memastikan perataan vertikal yang baik */
         }
+        
+        /* Label yang mengikuti radio/checkbox (dibuat inline) */
+        .inline-item {
+            display: inline-block; /* Membuat setiap pilihan sebaris */
+            margin-right: 15px; /* Jarak antar pilihan */
+            font-weight: normal; /* Menghilangkan bold dari label ini */
+        }
+
+        /* Div atau label utama untuk Jenis Kelamin/Hobi tetap block */
+        .group-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
         button {
             background-color: #5cb85c;
             color: white;
@@ -55,7 +74,7 @@
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 4px;
             text-align: left;
         }
         th {
@@ -83,20 +102,30 @@
             <option value="Teknik Elektro">Teknik Elektro</option>
         </select>
 
-        <label>Jenis Kelamin:</label>
-        <input type="radio" id="jk_pria" name="jenis_kelamin" value="Pria" required>
-        <label for="jk_pria">Pria</label>
-        <input type="radio" id="jk_wanita" name="jenis_kelamin" value="Wanita">
-        <label for="jk_wanita">Wanita</label>
+        <label class="group-label">Jenis Kelamin:</label>
+        <span class="inline-item">
+            <input type="radio" id="jk_pria" name="jenis_kelamin" value="Pria" required>
+            <label for="jk_pria" style="display: inline; font-weight: normal;">Pria</label>
+        </span>
+        <span class="inline-item">
+            <input type="radio" id="jk_wanita" name="jenis_kelamin" value="Wanita">
+            <label for="jk_wanita" style="display: inline; font-weight: normal;">Wanita</label>
+        </span>
         <br><br>
 
-        <label>Hobi:</label>
-        <input type="checkbox" id="hobi1" name="hobi[]" value="Membaca">
-        <label for="hobi1">Membaca</label>
-        <input type="checkbox" id="hobi2" name="hobi[]" value="Olahraga">
-        <label for="hobi2">Olahraga</label>
-        <input type="checkbox" id="hobi3" name="hobi[]" value="Programming">
-        <label for="hobi3">Programming</label>
+        <label class="group-label">Hobi:</label>
+        <span class="inline-item">
+            <input type="checkbox" id="hobi1" name="hobi[]" value="Membaca">
+            <label for="hobi1" style="display: inline; font-weight: normal;">Membaca</label>
+        </span>
+        <span class="inline-item">
+            <input type="checkbox" id="hobi2" name="hobi[]" value="Olahraga">
+            <label for="hobi2" style="display: inline; font-weight: normal;">Olahraga</label>
+        </span>
+        <span class="inline-item">
+            <input type="checkbox" id="hobi3" name="hobi[]" value="Programming">
+            <label for="hobi3" style="display: inline; font-weight: normal;">Programming</label>
+        </span>
         <br><br>
 
         <label for="alamat">Alamat:</label>
